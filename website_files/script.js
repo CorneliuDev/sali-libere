@@ -1,10 +1,3 @@
-const allClassrooms = [
-    "101", "108", "112", "114", "115", "118", "122", "123", "125", "201", "204", "213", "214", "215", "216", "218", "223", "224", "225",
-    "230", "301", "302", "309", "311", "313", "314", "315", "318", "322", "401", "402", "404", "406", "410", "412", "415", "416", "417",
-    "419", "423", "424", "425", "428", "431", "Gradinita", "SalaAlbastra", "SalaDeLecura", "SalaRosie", "SalaSportivaNr1", "SalaSportivaNr2",
-    "SalaTurcoaz", "SalaVerde"
-];
-
 const data= {
     "odd": {
       "Luni": {
@@ -1570,6 +1563,7 @@ const data= {
         actualData[week][day][hour] = actualData[week][day][hour].filter(r => r !== room);
           modal.classList.add("hidden");
           getFreeClassrooms();
+          // window.location.replace(`script.php?room=${room}`);
       }
 
       const confirmNo = document.getElementById("confirmNo");
