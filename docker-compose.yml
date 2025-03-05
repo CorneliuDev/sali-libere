@@ -5,7 +5,7 @@ services:
     ports:
       - 80:80
     volumes:
-      - ./website_files:/var/www/html
+      - './website_files:/var/www/html'
     depends_on:
       - baza
     restart: unless-stopped
@@ -20,5 +20,5 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - ./databaseData:/var/lib/mysql
+      - './databaseData:/var/lib/mysql'
     restart: unless-stopped

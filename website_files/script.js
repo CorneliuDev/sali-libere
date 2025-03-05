@@ -1560,9 +1560,10 @@ const data= {
 
       const confirmYes = document.getElementById("confirmYes");
       confirmYes.onclick = () => {
+        alert('hello world');
         actualData[week][day][hour] = actualData[week][day][hour].filter(r => r !== room);
-          modal.classList.add("hidden");
-          getFreeClassrooms();
+        modal.classList.add("hidden");
+        getFreeClassrooms();
           // window.location.replace(`script.php?room=${room}`);
       }
 
@@ -1570,9 +1571,9 @@ const data= {
 
       confirmNo.onclick = () => {
           modal.classList.add("hidden");
+          alert('Hello World');
       }
   }
-
 
   function resetActualData() {
       const now = new Date();
