@@ -75,6 +75,7 @@
     -webkit-text-decoration: underline dotted;
     text-decoration: underline dotted;
   }
+  #getData { cursor: pointer; }
   h1, h2, h3, h4, h5, h6 {
     font-size: inherit;
     font-weight: inherit;

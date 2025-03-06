@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./output.css" rel="stylesheet">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
-    <title>Săli Libere - CHICAHUl</title>
+    <title>Săli Libere - CHICAHUL</title>
 </head>
 
 <body class="flex justify-center items-center min-h-screen bg-accent p-4">
@@ -44,8 +44,10 @@
         </div>
 
         </div>
-        <button onclick="sendData()"
-            class="bg-black text-white px-10 py-3 rounded-lg shadow-lg mt-4 transition-all duration-300 transform active:scale-95 ">Verifică</button>
+        <div class="cursor-auto">
+            <button onclick="sendData()" id="getData"
+                class="bg-black text-white px-10 py-3 rounded-lg shadow-lg mt-4 transition-all duration-300 transform active:scale-95">Verifică</button>
+        </div>
 
         <div id="classrooms" class="grid mt-4 grid-cols-2 gap-2 w-full"></div>
 

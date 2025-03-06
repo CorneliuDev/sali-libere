@@ -14,7 +14,6 @@ services:
     container_name: mariadb
     environment:
       - MYSQL_ROOT_PASSWORD=XAKiRykMqfPy1NMIfrqs
-      - MYSQL_DATABASE=sali_libere
       - MYSQL_USER=user
       - MYSQL_PASSWORD=qqGbtlAQxlnHJe4YLjLN
     ports:

@@ -1,3 +1,7 @@
+drop database sali_libere;
+create database sali_libere;
+use sali_libere;
+
 create table paritate (
     id_par integer auto_increment primary key,
     actual_par ENUM('odd', 'even') not null
@@ -74,7 +78,7 @@ insert into free_rooms (actual_rooms, id_par, id_zi, id_ora) values
 
 
 
--- Luni pe bara
+-- Luni sub bara
 insert into free_rooms (actual_rooms, id_par, id_zi, id_ora) values
 ("213;216;223;224;311;313;112;114;204;218;225;230;301;309;315;318;322;401;415;419;423;424;428;431;SalaAlbastra;SalaVerde;SalaDeLectura;SalaSportivaNr2", 2, 1, 1),
 ("213;216;313;114;122;204;225;230;315;401;404;406;415;423;424;431;SalaTurcoaz;SalaDeLectura;SalaSportivaNr2", 2, 1, 2),
@@ -82,7 +86,7 @@ insert into free_rooms (actual_rooms, id_par, id_zi, id_ora) values
 ("213;216;313;101;112;114;118;122;123;201;204;225;301;309;315;318;322;415;419;423;424;425;SalaSportivaNr1;SalaSportivaNr2", 2, 1, 4),
 ("213;214;216;223;311;313;101;108;112;115;118;122;123;125;201;204;225;230;301;302;309;315;318;322;402;415;416;417;419;423;424;425;431;SalaAlbastra;SalaTurcoaz;SalaVerde;SalaDeLectura;SalaSportivaNr1;SalaSportivaNr2", 2, 1, 5);
 
--- Marti pe bara
+-- Marti sub bara
 insert into free_rooms (actual_rooms, id_par, id_zi, id_ora) values
 ("213;216;223;224;313;101;114;204;225;230;309;406;410;412;415;423;425;431;SalaAlbastra;SalaTurcoaz;SalaDeLectura;SalaSportivaNr1;SalaSportivaNr2", 2, 2, 1),
 ("213;215;216;223;313;112;114;115;123;204;225;230;301;315;415;416;425;SalaRosie;SalaDeLectura;SalaSportivaNr2", 2, 2, 2),
@@ -90,7 +94,7 @@ insert into free_rooms (actual_rooms, id_par, id_zi, id_ora) values
 ("213;216;223;313;314;101;112;114;118;122;123;201;204;225;230;301;302;309;315;318;322;415;416;417;419;423;424;425;SalaAlbastra;SalaDeLectura", 2, 2, 4),
 ("213;214;216;223;224;311;313;314;101;108;112;114;115;118;122;123;201;204;218;225;230;301;302;309;315;318;322;401;402;404;410;412;415;416;417;419;423;424;425;428;SalaAlbastra;SalaRosie;SalaVerde;SalaDeLectura", 2, 2, 5);
 
--- Miercuri pe bara
+-- Miercuri sub bara
 insert into free_rooms (actual_rooms, id_par, id_zi, id_ora) values
 ("213;216;223;313;314;112;114;115;115;118;122;125;201;204;225;230;301;315;322;401;406;410;412;415;SalaDeLectura;SalaSportivaNr2", 2, 3, 1),
 ("213;223;313;114;115;115;118;204;218;225;230;301;322;406;412;415;423;SalaRosie;SalaDeLectura;SalaSportivaNr2", 2, 3, 2),
@@ -98,7 +102,7 @@ insert into free_rooms (actual_rooms, id_par, id_zi, id_ora) values
 ("213;216;223;313;101;108;112;114;115;115;118;122;123;201;204;225;301;309;315;318;322;415;419;423;424;425;SalaDeLectura;SalaSportivaNr2", 2, 3, 4),
 ("213;214;215;216;223;311;313;314;101;108;112;114;115;115;118;122;123;125;201;204;218;225;230;301;302;309;315;318;322;401;402;404;406;412;415;416;417;419;423;424;425;428;431;SalaAlbastra;SalaTurcoaz;SalaVerde;SalaDeLectura;SalaSportivaNr1;SalaSportivaNr2", 2, 3, 5);
 
--- Joi pe bara
+-- Joi sub bara
 insert into free_rooms (actual_rooms, id_par, id_zi, id_ora) values
 ("213;216;313;108;114;118;204;225;230;302;402;410;415;416;419;425;431;SalaAlbastra;SalaRosie;SalaTurcoaz;SalaDeLectura", 2, 4, 1),
 ("213;216;313;114;125;204;225;230;302;318;412;415;419;431;SalaAlbastra;SalaTurcoaz;SalaDeLectura", 2, 4, 2),
@@ -106,7 +110,7 @@ insert into free_rooms (actual_rooms, id_par, id_zi, id_ora) values
 ("213;216;223;313;101;108;112;114;118;122;123;201;204;225;230;301;302;309;318;322;415;419;423;424;425;SalaRosie;SalaDeLectura;SalaSportivaNr1", 2, 4, 4),
 ("213;214;215;216;223;224;311;313;314;101;108;112;114;115;118;122;123;125;201;204;218;225;230;301;302;309;315;318;322;401;402;404;406;412;415;417;419;423;424;425;428;431;SalaRosie;SalaTurcoaz;SalaVerde;SalaDeLectura;SalaSportivaNr1;SalaSportivaNr2", 2, 4, 5);
 
--- Vineri pe bara
+-- Vineri sub bara
 insert into free_rooms (actual_rooms, id_par, id_zi, id_ora) values
 ("213;216;223;313;101;108;112;114;122;201;204;225;230;301;302;309;315;318;322;401;406;415;416;425;SalaAlbastra;SalaRosie;SalaDeLectura;SalaSportivaNr2", 2, 5, 1),
 ("213;214;216;313;114;123;201;204;225;230;309;315;318;406;415;419;SalaDeLectura;SalaSportivaNr2", 2, 5, 2),

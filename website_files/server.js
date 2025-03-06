@@ -12,7 +12,8 @@ var con = mysql.createConnection({
     host: host,
     user: user,
     password: pass,
-    database: db
+    database: db,
+    multipleStatements: true
 });
 
 con.connect(function(err) {
@@ -47,9 +48,40 @@ app.post('/getFreeClassrooms', function(req, res) {
             res.json({ message: "error"});
         }
         res.json({ message: result});
-        console.log(result);
         res.end();
     });
+});
+
+app.post('/updateRooms', function(req, res) {
+    const {room, week, day, hour} = req.body;
+    const sqlGet = `SELECT actual_rooms FROM free_rooms WHERE id_par=${week} AND id_zi=${day} AND id_ora=${hour}`;
+    var fetched_data;
+    con.query(sqlGet, function(err, result) {
+        if(err) {
+            console.log(err);
+            res.json({ message: "error"});
+        }
+        fetched_data = result[0]['actual_rooms'].split(';');
+        const index = fetched_data.indexOf(room);
+        fetched_data.splice(index, 1);
+        fetched_data = fetched_data.join(';');
+    });
+    setTimeout(() => {
+        const sqlPut = `UPDATE free_rooms SET actual_rooms='${fetched_data}' WHERE id_par=${week} AND id_zi=${day} AND id_ora=${hour}`;
+        con.query(sqlPut);
+        res.end();
+    }, 20);
+});
+
+app.post('/reset', function(req, res) {
+    const {user, pass} = req.body;
+    if(user == 'admin' && pass == 'admin') {
+        const fs = require('fs');
+        const sql = fs.readFileSync('../mariadbimage/init.sql', 'utf8');
+        con.query(sql);
+        res.send('success');
+    }
+    res.end();
 });
 
 app.listen(8080);
