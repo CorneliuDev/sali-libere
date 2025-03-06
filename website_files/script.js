@@ -1528,16 +1528,30 @@ const data= {
       }
     }
   }
-  
 
-  
-  let actualData = data;
+  let actualData;
+
+  function sendData()
+  {
+    const week = document.getElementById("week").value;
+    const day = document.getElementById("day").value;
+    const hour = document.getElementById("hour").value;
+    fetch("/getFreeClassrooms", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ week, day, hour })
+    }).then(response => response.json()).
+    then(data => {actualData = data['message'][0]['actual_rooms'].split(';')}).
+    catch(error => console.log(`Error: ${error}`));
+    setTimeout(getFreeClassrooms, 100);
+  }
+
   function getFreeClassrooms() {
       const week = document.getElementById("week").value;
       const day = document.getElementById("day").value;
       const hour = document.getElementById("hour").value;
 
-      let avalable = actualData[week][day][hour] || [];
+      let avalable = actualData;
 
       let roomsDiv = document.getElementById("classrooms");
       roomsDiv.innerHTML = "";
@@ -1560,18 +1574,15 @@ const data= {
 
       const confirmYes = document.getElementById("confirmYes");
       confirmYes.onclick = () => {
-        alert('hello world');
         actualData[week][day][hour] = actualData[week][day][hour].filter(r => r !== room);
         modal.classList.add("hidden");
         getFreeClassrooms();
-          // window.location.replace(`script.php?room=${room}`);
       }
 
       const confirmNo = document.getElementById("confirmNo");
 
       confirmNo.onclick = () => {
           modal.classList.add("hidden");
-          alert('Hello World');
       }
   }
 

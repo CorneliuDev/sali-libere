@@ -16,19 +16,19 @@
         <div class="mb-4 w-full">
             <label class="block text-gray-700">Selectează săptămâna:</label>
             <select class="w-full p-2 border-accent rounded-lg bg-accent" id="week">
-                <option value="odd">Pe bară</option>
-                <option value="even">Sub bară</option>
+                <option value="1">Pe bară</option>
+                <option value="2">Sub bară</option>
             </select>
         </div>
 
         <div class="mb-4 w-full">
             <label class="block text-gray-700">Selectează ziua:</label>
             <select class="w-full p-2 border-accent rounded-lg bg-accent" id="day">
-                <option value="Luni">Luni</option>
-                <option value="Marti">Marți</option>
-                <option value="Miercuri">Miercuri</option>
-                <option value="Joi">Joi</option>
-                <option value="Vineri">Vineri</option>
+                <option value="1">Luni</option>
+                <option value="2">Marți</option>
+                <option value="3">Miercuri</option>
+                <option value="4">Joi</option>
+                <option value="5">Vineri</option>
             </select>
         </div>
 
@@ -44,7 +44,7 @@
         </div>
 
         </div>
-        <button onclick="getFreeClassrooms()"
+        <button onclick="sendData()"
             class="bg-black text-white px-10 py-3 rounded-lg shadow-lg mt-4 transition-all duration-300 transform active:scale-95 ">Verifică</button>
 
         <div id="classrooms" class="grid mt-4 grid-cols-2 gap-2 w-full"></div>
