@@ -1,0 +1,25 @@
+{
+  "name": "sali-project",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/CorneliuDev/sali-libere#readme",
+  "bugs": {
+    "url": "https://github.com/CorneliuDev/sali-libere/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CorneliuDev/sali-libere.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {},
+  "start": "server.js"
+}

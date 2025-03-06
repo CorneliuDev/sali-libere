@@ -1,14 +1,14 @@
 services:
-  apache:
-    build: ./phpimage
-    container_name: website
-    ports:
-      - 80:80
-    volumes:
-      - './website_files:/var/www/html'
-    depends_on:
-      - baza
-    restart: unless-stopped
+  # apache:
+  #   build: ./phpimage
+  #   container_name: website
+  #   ports:
+  #     - 80:80
+  #   volumes:
+  #     - './website_files:/var/www/html'
+  #   depends_on:
+  #     - baza
+  #   restart: unless-stopped
   baza:
     build: ./mariadbimage
     container_name: mariadb
