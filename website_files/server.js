@@ -2,6 +2,7 @@ require('dotenv').config({path: __dirname + '/database.env'})
 const express = require('express');
 const path = require('path');
 const mysql = require('mysql');
+const cron = require('node-cron');
 
 const host = process.env.DB_HOST;
 const user = process.env.DB_USER;
@@ -29,14 +30,6 @@ app.use(express.json());
 
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, 'index.html'));
-
-    // con.query(sql, function(err, result) {
-    //     if (err) {
-    //         console.log(err);
-    //         res.redirect('/?register=failed');
-    //     }
-    //     res.redirect(`/?register=${result[0][0]['stat']}`);
-    // });
 });
 
 app.post('/getFreeClassrooms', function(req, res) {
@@ -82,6 +75,13 @@ app.post('/reset', function(req, res) {
         res.send('success');
     }
     res.end();
+});
+
+cron.schedule('*/30 */2 * * 1-5', () => {
+    const fs = require('fs');
+    const sql = fs.readFileSync('../mariadbimage/init.sql', 'utf8');
+    con.query(sql);
+    console.log('took a reset');
 });
 
 app.listen(8080);
