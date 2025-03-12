@@ -74,6 +74,7 @@ app.post('/reset', function(req, res) {
         con.query(sql);
         res.send('success');
     }
+    else res.send('failed');
     res.end();
 });
 
