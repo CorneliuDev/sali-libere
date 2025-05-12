@@ -89,7 +89,7 @@ app.post('/reset', function(req, res) {
     res.end();
 });
 
-cron.schedule('*/30 */2 * * 1-5', () => {
+cron.schedule('0 0 * * 0', () => {
     const fs = require('fs');
     const sql = fs.readFileSync('../mariadbimage/init.sql', 'utf8');
     con.query(sql);
