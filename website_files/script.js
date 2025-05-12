@@ -10,9 +10,11 @@ function sendData()
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ week, day, hour })
   }).then(response => response.json()).
-  then(data => {actualData = data['message'][0]['actual_rooms'].split(';')}).
+  then(data => {
+    actualData = data['message'][0]['actual_rooms'].split(';');
+    getFreeClassrooms();
+  }).
   catch(error => console.log(`Error: ${error}`));
-  setTimeout(getFreeClassrooms, 100);
 }
 
 function getFreeClassrooms() {

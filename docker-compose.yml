@@ -6,6 +6,7 @@ services:
       - MYSQL_ROOT_PASSWORD=XAKiRykMqfPy1NMIfrqs
       - MYSQL_USER=user
       - MYSQL_PASSWORD=qqGbtlAQxlnHJe4YLjLN
+      - MYSQL_DATABASE=sali_libere
     ports:
       - 3306:3306
     volumes:
