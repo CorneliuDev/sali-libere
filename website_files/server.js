@@ -1,19 +1,30 @@
-require('dotenv').config({path: __dirname + '/database.env'})
+// require('dotenv').config({path: __dirname + '/database.env'})
+const dotenv = require('dotenv');
 const express = require('express');
 const path = require('path');
 const mysql = require('mysql');
 const cron = require('node-cron');
 
-const host = process.env.DB_HOST;
-const user = process.env.DB_USER;
-const pass = process.env.DB_PASS;
-const db = process.env.DB_NAME;
+dotenv.config();
+
+const {
+    DB_HOST,
+    DB_USER,
+    DB_PASS,
+    DB_NAME,
+    HTTP_PORT
+} = process.env;
+
+// const host = process.env.DB_HOST;
+// const user = process.env.DB_USER;
+// const pass = process.env.DB_PASS;
+// const db = process.env.DB_NAME;
 
 var con = mysql.createConnection({
-    host: host,
-    user: user,
-    password: pass,
-    database: db,
+    host: DB_HOST,
+    user: DB_USER,
+    password: DB_PASS,
+    database: DB_NAME,
     multipleStatements: true
 });
 
@@ -85,4 +96,4 @@ cron.schedule('*/30 */2 * * 1-5', () => {
     console.log('took a reset');
 });
 
-app.listen(8080);
+app.listen(HTTP_PORT);
