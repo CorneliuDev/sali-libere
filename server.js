@@ -34,10 +34,6 @@ app.use(express.static(path.join(__dirname, '/website_files')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname, 'index.html'));
-});
-
 app.post('/getFreeClassrooms', function(req, res) {
     const {week, day, hour} = req.body;
     const sql = `SELECT actual_rooms FROM free_rooms WHERE id_par=${week} AND id_zi=${day} AND id_ora=${hour}`;
