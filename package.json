@@ -14,8 +14,8 @@
   "author": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "test": "node script.js",
+    "start": "node server.js"
   },
   "dependencies": {
     "accepts": "^2.0.0",

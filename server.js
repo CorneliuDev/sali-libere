@@ -26,6 +26,11 @@ var con = mysql.createConnection({
 con.connect(function(err) {
     if (err) throw err;
     console.log('Connected to database!');
+    process.exit(0);
+});
+
+con.on('error', (err) => {
+    console.error(err);
 });
 
 const app = express();
